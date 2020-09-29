@@ -1,0 +1,55 @@
+.header{
+    
+    color: black;
+    font-size: 4rem;
+    margin-top: 0px;
+    padding-top: 30px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    
+
+}
+
+.subtitle{
+   font-size: 2rem;
+   margin-top: 1.5em;
+
+   &--small {
+       font-size: 1.7rem;
+       margin-top: .5em;
+   }
+}
+
+#playInstruction {
+    font-weight: bold;
+    font-size:30px; 
+    text-align: center; 
+    display: none;
+}
+
+
+#winningText {
+    
+    font-weight: bold;
+    font-size:50px; 
+    text-align: center; 
+
+}
+
+.button-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn-chooseside {
+    height: 2em;
+    width: 6em;
+    margin: 1em 1em 0 1em;
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
