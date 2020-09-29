@@ -13,7 +13,7 @@ const square7 = document.getElementById("gameSquare7");
 const square8 = document.getElementById("gameSquare8");
 const square9 = document.getElementById("gameSquare9");
 
-const playerX = document.getElementById("chooseSideX");
-const playerO = document.getElementById("chooseSideO");
+const chooseSideX = document.getElementById("chooseSideX");
+const chooseSideO = document.getElementById("chooseSideO");
 
 const winningSymbol;
