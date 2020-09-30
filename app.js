@@ -73,7 +73,11 @@ gameSquare.forEach(function(square){
             alert('Please Choose an Empty Square')
         }
         
-        // gameArea.style.pointerEvents = 'none';
+        gameArea.style.pointerEvents = 'none';
+
+        randomComputerSquare();
+
+        gameArea.style.pointerEvents = 'auto';
 
 
         
@@ -83,7 +87,33 @@ gameSquare.forEach(function(square){
 
 //function to randomly select computer square
 
+function randomComputerSquare(){
 
+    const randomNumber = Math.floor((Math.random()*9)+1);
+    const squareNumber = document.getElementById("gameSquare" + randomNumber);
+    
+    if (squareNumber.innerHTML == "") {
+        squareNumber.innerHTML = computerSymbol;
+
+        // playerHasWon();
+    } else {
+        randomComputerSquare();
+    };
+};
+
+//check if game has been won
+
+// function winText(){
+//     playInstruction.style.display = "none";
+//     document.getElementById("winningText").innerHTML = 'Player ' + winningSymbol + ' has Won!!';
+//     document.getElementById("winningTextBtn").style.display = "block";
+
+   
+// };
+
+// document.getElementById("playAgain").onclick = function(){
+//     document.location.reload(true);
+// };
 
 
 
