@@ -28,6 +28,7 @@ playerSymbolO = `<img class="gameSquare_icon" src="./images/rec.png" alt="Nought
 
 
 let winningSymbol;
+let wonGame = false;
 
 //player choose side
 
@@ -72,12 +73,30 @@ gameSquare.forEach(function(square){
         }else{
             alert('Please Choose an Empty Square')
         }
+
+
         
         gameArea.style.pointerEvents = 'none';
 
-        randomComputerSquare();
+        playerHasWon();
 
-        gameArea.style.pointerEvents = 'auto';
+        if (wonGame == false){
+            setTimeout(randomComputerSquare, 750);  
+            setTimeout(function(){
+                gameArea.style.pointerEvents = 'auto';
+                }, 750);
+        }
+
+        // do {setTimeout(randomComputerSquare(),750);
+        //     setTimeout(function(){
+        //     gameArea.style.pointerEvents = 'auto';
+        //     }, 750);
+        // } while (wonGame == false);
+
+        
+
+
+        // gameArea.style.pointerEvents = 'auto';
 
 
         
@@ -87,6 +106,8 @@ gameSquare.forEach(function(square){
 
 //function to randomly select computer square
 
+
+
 function randomComputerSquare(){
 
     const randomNumber = Math.floor((Math.random()*9)+1);
@@ -95,21 +116,63 @@ function randomComputerSquare(){
     if (squareNumber.innerHTML == "") {
         squareNumber.innerHTML = computerSymbol;
 
-        // playerHasWon();
-    } else {
+        playerHasWon();
+
+    } else if (squareNumber.innerHTML !== ""){
         randomComputerSquare();
     };
+
+    
 };
 
 //check if game has been won
 
-// function winText(){
-//     playInstruction.style.display = "none";
-//     document.getElementById("winningText").innerHTML = 'Player ' + winningSymbol + ' has Won!!';
-//     document.getElementById("winningTextBtn").style.display = "block";
+function playerHasWon(){
+
+    
+        if (square1.innerHTML == playerSymbolX && square2.innerHTML == playerSymbolX && square3.innerHTML == playerSymbolX || square4.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square6.innerHTML == playerSymbolX || square7.innerHTML == playerSymbolX && square8.innerHTML == playerSymbolX && square9.innerHTML == playerSymbolX || square1.innerHTML == playerSymbolX && square4.innerHTML == playerSymbolX && square7.innerHTML == playerSymbolX || square2.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square8.innerHTML == playerSymbolX || square3.innerHTML == playerSymbolX && square6.innerHTML == playerSymbolX && square9.innerHTML == playerSymbolX || square1.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square9.innerHTML == playerSymbolX || square3.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square7.innerHTML == playerSymbolX){
+          
+            winningSymbol = 'X';
+            wonGame = true;
+            endGame();
+            // endGame = true;
+            gameArea.style.pointerEvents = 'none';
+            console.log("player X won");
+            winText();
+        } else if (square1.innerHTML && square2.innerHTML && square3.innerHTML == playerSymbolO || square4.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square6.innerHTML == playerSymbolO || square7.innerHTML == playerSymbolO && square8.innerHTML == playerSymbolO && square9.innerHTML == playerSymbolO || square1.innerHTML == playerSymbolO && square4.innerHTML == playerSymbolO && square7.innerHTML == playerSymbolO || square2.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square8.innerHTML == playerSymbolO || square3.innerHTML == playerSymbolO && square6.innerHTML == playerSymbolO && square9.innerHTML == playerSymbolO || square1.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square9.innerHTML == playerSymbolO || square3.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square7.innerHTML == playerSymbolO){
+        
+            winningSymbol = 'O';
+            console.log("player O won")
+            wonGame = true;
+            endGame();
+            // endGame = true;
+            winText();
+        } else {
+            
+            if (square1.innerHTML !== "" && square2.innerHTML !== "" && square3.innerHTML !== "" && square4.innerHTML !== "" && square5.innerHTML !== "" && square6.innerHTML !== "" && square7.innerHTML !== "" && square8.innerHTML !== "" && square9.innerHTML !== ""){
+                alert("No One Has Won - Try Again"); 
+                wonGame = true;
+                // endGame = true;
+            };
+        };
+    
+    
+}
+
+function endGame(){
+    
+    gameArea.style.pointerEvents = 'none';
+    
+    console.log('end game working')
+}
+
+function winText(){
+    playInstruction.style.display = "none";
+    // document.getElementById("winningText").innerHTML = 'Player ' + winningSymbol + ' has Won!!';
+    // document.getElementById("winningTextBtn").style.display = "block";
 
    
-// };
+};
 
 // document.getElementById("playAgain").onclick = function(){
 //     document.location.reload(true);
