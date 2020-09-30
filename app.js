@@ -176,7 +176,7 @@ function winText(){
     $('#endGameModal').modal('show');
 
     if (winningSymbol == playerSymbol){
-        winningText.innerText = "Congratulations, you have won!"
+        winningText.innerText = "Congratulations, you won the game!"
     }else{
         winningText.innerText = "Sorry, you have not won this time"
     }
