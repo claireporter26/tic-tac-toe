@@ -5,6 +5,20 @@
     height: 316px;  
     padding: 0px;
     background-color: #00c3ff;
+    pointer-events: none;
+}
+
+.gameSquare {
+
+    padding: .1em;
+
+    &_icon {
+        pointer-events: none;
+    }
+
+     
+    
+   
 }
 
 table {
@@ -12,6 +26,7 @@ table {
     /* margin-top: 20px; */
     width: 100%;
     height: 100%;
+    line-height: 0;
     
     border-collapse: collapse;
     

@@ -20,11 +20,12 @@
    }
 }
 
-#playInstruction {
-    font-weight: bold;
-    font-size:30px; 
+.play-instruction {
+    
+    font-size: 1.5rem; 
     text-align: center; 
     display: none;
+    margin-top: 2em;
 }
 
 
@@ -44,7 +45,7 @@
 
 .btn-chooseside {
     height: 2em;
-    width: 6em;
+    width: 5em;
     margin: 1em 1em 0 1em;
     // text-align: center;
     display: flex;
@@ -52,4 +53,14 @@
     align-self: center;
     font-size: 1.1rem;
     font-weight: bold;
+    
+
+    &_icon {
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+        
+        
+    }
 }
+
