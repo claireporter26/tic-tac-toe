@@ -26,9 +26,12 @@ playInstruction = document.querySelector('.play-instruction');
 playerSymbolX = `<img class="gameSquare_icon" src="./images/close.png" alt="Cross">`;
 playerSymbolO = `<img class="gameSquare_icon" src="./images/rec.png" alt="Nought">`;
 
+const endGameModal = document.getElementById('endGameModal');
 
 let winningSymbol;
 let wonGame = false;
+
+let winningText = document.querySelector('.winning-text')
 
 //player choose side
 
@@ -132,7 +135,7 @@ function playerHasWon(){
     
         if (square1.innerHTML == playerSymbolX && square2.innerHTML == playerSymbolX && square3.innerHTML == playerSymbolX || square4.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square6.innerHTML == playerSymbolX || square7.innerHTML == playerSymbolX && square8.innerHTML == playerSymbolX && square9.innerHTML == playerSymbolX || square1.innerHTML == playerSymbolX && square4.innerHTML == playerSymbolX && square7.innerHTML == playerSymbolX || square2.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square8.innerHTML == playerSymbolX || square3.innerHTML == playerSymbolX && square6.innerHTML == playerSymbolX && square9.innerHTML == playerSymbolX || square1.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square9.innerHTML == playerSymbolX || square3.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square7.innerHTML == playerSymbolX){
           
-            winningSymbol = 'X';
+            winningSymbol = `<img class="gameSquare_icon" src="./images/close.png" alt="Cross">`;
             wonGame = true;
             endGame();
             // endGame = true;
@@ -141,7 +144,7 @@ function playerHasWon(){
             winText();
         } else if (square1.innerHTML && square2.innerHTML && square3.innerHTML == playerSymbolO || square4.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square6.innerHTML == playerSymbolO || square7.innerHTML == playerSymbolO && square8.innerHTML == playerSymbolO && square9.innerHTML == playerSymbolO || square1.innerHTML == playerSymbolO && square4.innerHTML == playerSymbolO && square7.innerHTML == playerSymbolO || square2.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square8.innerHTML == playerSymbolO || square3.innerHTML == playerSymbolO && square6.innerHTML == playerSymbolO && square9.innerHTML == playerSymbolO || square1.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square9.innerHTML == playerSymbolO || square3.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square7.innerHTML == playerSymbolO){
         
-            winningSymbol = 'O';
+            winningSymbol = `<img class="gameSquare_icon" src="./images/rec.png" alt="Nought">`;
             console.log("player O won")
             wonGame = true;
             endGame();
@@ -168,6 +171,16 @@ function endGame(){
 
 function winText(){
     playInstruction.style.display = "none";
+
+    
+    $('#endGameModal').modal('show');
+
+    if (winningSymbol == playerSymbol){
+        winningText.innerText = "Congratulations, you have won!"
+    }else{
+        winningText.innerText = "Sorry, you have not won this time"
+    }
+    
     // document.getElementById("winningText").innerHTML = 'Player ' + winningSymbol + ' has Won!!';
     // document.getElementById("winningTextBtn").style.display = "block";
 
