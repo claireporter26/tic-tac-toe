@@ -133,7 +133,7 @@ function randomComputerSquare(){
 function playerHasWon(){
 
     
-        if (square1.innerHTML == playerSymbolX && square2.innerHTML == playerSymbolX && square3.innerHTML == playerSymbolX || square4.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square6.innerHTML == playerSymbolX || square7.innerHTML == playerSymbolX && square8.innerHTML == playerSymbolX && square9.innerHTML == playerSymbolX || square1.innerHTML == playerSymbolX && square4.innerHTML == playerSymbolX && square7.innerHTML == playerSymbolX || square2.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square8.innerHTML == playerSymbolX || square3.innerHTML == playerSymbolX && square6.innerHTML == playerSymbolX && square9.innerHTML == playerSymbolX || square1.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square9.innerHTML == playerSymbolX || square3.innerHTML == playerSymbolX && square5.innerHTML == playerSymbolX && square7.innerHTML == playerSymbolX){
+        if (square1.innerHTML === playerSymbolX && square2.innerHTML === playerSymbolX && square3.innerHTML === playerSymbolX || square4.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square6.innerHTML === playerSymbolX || square7.innerHTML === playerSymbolX && square8.innerHTML === playerSymbolX && square9.innerHTML === playerSymbolX || square1.innerHTML === playerSymbolX && square4.innerHTML === playerSymbolX && square7.innerHTML === playerSymbolX || square2.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square8.innerHTML === playerSymbolX || square3.innerHTML === playerSymbolX && square6.innerHTML === playerSymbolX && square9.innerHTML === playerSymbolX || square1.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square9.innerHTML === playerSymbolX || square3.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square7.innerHTML === playerSymbolX){
           
             winningSymbol = `<img class="gameSquare_icon" src="./images/close.png" alt="Cross">`;
             wonGame = true;
@@ -142,7 +142,15 @@ function playerHasWon(){
             gameArea.style.pointerEvents = 'none';
             console.log("player X won");
             winText();
-        } else if (square1.innerHTML && square2.innerHTML && square3.innerHTML == playerSymbolO || square4.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square6.innerHTML == playerSymbolO || square7.innerHTML == playerSymbolO && square8.innerHTML == playerSymbolO && square9.innerHTML == playerSymbolO || square1.innerHTML == playerSymbolO && square4.innerHTML == playerSymbolO && square7.innerHTML == playerSymbolO || square2.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square8.innerHTML == playerSymbolO || square3.innerHTML == playerSymbolO && square6.innerHTML == playerSymbolO && square9.innerHTML == playerSymbolO || square1.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square9.innerHTML == playerSymbolO || square3.innerHTML == playerSymbolO && square5.innerHTML == playerSymbolO && square7.innerHTML == playerSymbolO){
+        } else if (
+            square1.innerHTML && square2.innerHTML && square3.innerHTML === playerSymbolO || 
+            square4.innerHTML === playerSymbolO && square5.innerHTML === playerSymbolO && square6.innerHTML === playerSymbolO || 
+            square7.innerHTML === playerSymbolO && square8.innerHTML === playerSymbolO && square9.innerHTML === playerSymbolO || 
+            square1.innerHTML === playerSymbolO && square4.innerHTML === playerSymbolO && square7.innerHTML === playerSymbolO || 
+            square2.innerHTML === playerSymbolO && square5.innerHTML === playerSymbolO && square8.innerHTML === playerSymbolO || 
+            square3.innerHTML === playerSymbolO && square6.innerHTML === playerSymbolO && square9.innerHTML === playerSymbolO || 
+            square1.innerHTML === playerSymbolO && square5.innerHTML === playerSymbolO && square9.innerHTML === playerSymbolO || 
+            square3.innerHTML === playerSymbolO && square5.innerHTML == playerSymbolO && square7.innerHTML === playerSymbolO){
         
             winningSymbol = `<img class="gameSquare_icon" src="./images/rec.png" alt="Nought">`;
             console.log("player O won")
@@ -169,6 +177,7 @@ function endGame(){
     console.log('end game working')
 }
 
+
 function winText(){
     playInstruction.style.display = "none";
 
@@ -180,6 +189,18 @@ function winText(){
     }else{
         winningText.innerText = "Sorry, you have not won this time"
     }
+
+    const playAgain = document.getElementById("play-again");
+
+    playAgain.addEventListener('click', function(){
+        location.reload();
+        
+    })
+
+
+    // document.getElementById("play-again"). = function(){
+    // document.location.reload;
+    // };
     
     // document.getElementById("winningText").innerHTML = 'Player ' + winningSymbol + ' has Won!!';
     // document.getElementById("winningTextBtn").style.display = "block";
@@ -187,9 +208,7 @@ function winText(){
    
 };
 
-// document.getElementById("playAgain").onclick = function(){
-//     document.location.reload(true);
-// };
+
 
 
 
