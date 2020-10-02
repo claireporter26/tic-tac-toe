@@ -7,33 +7,15 @@
     <title>TicTacToe Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;600&family=Playfair+Display:ital,wght@0,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
     <div class="container-main">
 
-        <div class="modal fade" id="endGameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        <!-- <div class="modal fade" id="endGameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       
+        <div class="modal fade" id="endGameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -46,14 +28,14 @@
                 <p class="winning-text"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-modal" >Play Again</button>
+                    <button type="button" class="btn btn-success btn-modal"  id="play-again">Play Again</button>
                     <button type="button" class="btn btn-secondary btn-modal" data-dismiss="modal">Close</button>
                 
-                    id="play-again"
+                   
                  </div>
             </div>
             </div>
-        </div> --> -->
+        </div>
 
 
         <h1 class="header">Tic Tac Toe</h1>
@@ -81,7 +63,7 @@
                 <tr>
                     <td class="gameSquare" id="gameSquare1"></td>
                     <td class="gameSquare" id="gameSquare2"></td>
-                    <td class="gameSquare" id="gameSquare3"></td>
+                    <td class="gameSquare" id="gameSquare3"><img class="gameSquare_icon" src="./images/close.png" alt="Cross"></td>
                 </tr>
                 <tr>
                     <td class="gameSquare" id="gameSquare4"></td>
@@ -102,14 +84,16 @@
 
         </div>
 
-        <button data-toggle="modal" data-target="#endGameModal">Test Modal</button>
+        <!-- <button data-toggle="modal" data-target="#endGameModal">Test Modal</button> -->
+
+    
+
+        <footer>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> and <a href="https://www.flaticon.com/authors/hirschwolf" title="hirschwolf">hirschwolf</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </footer>
 
     </div>
 
-    <footer>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/hirschwolf" title="hirschwolf">hirschwolf</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-    </footer>
 
     <script src="app.js"></script> 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

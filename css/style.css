@@ -12,7 +12,7 @@ img {
 
 body {
   background-color: lightgrey;
-  font-family: 'Baloo Tammudu 2', cursive;
+  color: #240f4b;
 }
 
 .container-main {
@@ -22,12 +22,11 @@ body {
 }
 
 .header {
-  color: black;
+  color: #240f4b;
   font-size: 4rem;
   margin-top: 0px;
   padding-top: 30px;
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
+  font-family: 'Pacifico', cursive;
 }
 
 .subtitle {
@@ -86,15 +85,13 @@ body {
   pointer-events: none;
 }
 
-.btn-modal {
-  display: inline-block;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  line-height: 1rem;
+footer {
+  margin-top: 4em;
+  font-size: .6rem;
+}
+
+footer a {
+  color: black;
 }
 
 #gameArea {
