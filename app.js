@@ -173,10 +173,13 @@ function endGame(){
 
 
 function winText(){
-    playInstruction.style.display = "none";
-
     
-    $('#endGameModal').modal('show');
+
+    setTimeout(function(){
+        playInstruction.style.display = "none";
+        $('#endGameModal').modal('show');
+    }, 690)
+    
 
     if (winningSymbol == playerSymbol){
         winningText.innerText = "Congratulations, you won the game!"

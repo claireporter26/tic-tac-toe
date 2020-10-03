@@ -9,7 +9,11 @@ img {
     height: 100%
 }
 
+html, body {
+    // height: 100%;
+}
 body {
+    // height: 100%;
     background-color: lightgrey;
     // font-family: 'Baloo Tammudu 2', cursive;
     font-family: 'David Libre', serif;
@@ -19,6 +23,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    // position: relative;
+
+    
    
 }
 
@@ -26,6 +34,13 @@ body {
     width: 80%;
     margin: 1em auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+
 }
 
 

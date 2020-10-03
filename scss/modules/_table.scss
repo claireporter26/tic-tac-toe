@@ -1,5 +1,6 @@
 #gameArea{
-    margin: 0 auto;
+    margin: 0 auto 2.5em auto;
+   
    
     width: 316px;
     height: 316px;  
@@ -10,7 +11,7 @@
 
 .gameSquare {
 
-    padding: .1em;
+    padding: .5em;
 
     &_icon {
         pointer-events: none;

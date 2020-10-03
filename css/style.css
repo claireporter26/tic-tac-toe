@@ -33,6 +33,19 @@ body {
   width: 80%;
   margin: 1em auto;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header {
@@ -127,6 +140,7 @@ body {
 footer {
   margin-top: 4em;
   font-size: .6rem;
+  bottom: 15px;
 }
 
 footer a {
@@ -134,7 +148,7 @@ footer a {
 }
 
 #gameArea {
-  margin: 0 auto;
+  margin: 0 auto 2.5em auto;
   width: 316px;
   height: 316px;
   padding: 0px;
@@ -143,7 +157,7 @@ footer a {
 }
 
 .gameSquare {
-  padding: .1em;
+  padding: .5em;
 }
 
 .gameSquare_icon {
