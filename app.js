@@ -135,14 +135,14 @@ function playerHasWon(){
             console.log("player X won");
             winText();
         } else if (
-            square1.innerHTML && square2.innerHTML && square3.innerHTML === playerSymbolO || 
+            square1.innerHTML === playerSymbolO && square2.innerHTML === playerSymbolO && square3.innerHTML === playerSymbolO || 
             square4.innerHTML === playerSymbolO && square5.innerHTML === playerSymbolO && square6.innerHTML === playerSymbolO || 
             square7.innerHTML === playerSymbolO && square8.innerHTML === playerSymbolO && square9.innerHTML === playerSymbolO || 
             square1.innerHTML === playerSymbolO && square4.innerHTML === playerSymbolO && square7.innerHTML === playerSymbolO || 
             square2.innerHTML === playerSymbolO && square5.innerHTML === playerSymbolO && square8.innerHTML === playerSymbolO || 
             square3.innerHTML === playerSymbolO && square6.innerHTML === playerSymbolO && square9.innerHTML === playerSymbolO || 
             square1.innerHTML === playerSymbolO && square5.innerHTML === playerSymbolO && square9.innerHTML === playerSymbolO || 
-            square3.innerHTML === playerSymbolO && square5.innerHTML == playerSymbolO && square7.innerHTML === playerSymbolO){
+            square3.innerHTML === playerSymbolO && square5.innerHTML === playerSymbolO && square7.innerHTML === playerSymbolO){
         
             winningSymbol = `<img class="gameSquare_icon" src="./images/rec.png" alt="Nought">`;
             console.log("player O won")
@@ -153,8 +153,10 @@ function playerHasWon(){
         } else {
             
             if (square1.innerHTML !== "" && square2.innerHTML !== "" && square3.innerHTML !== "" && square4.innerHTML !== "" && square5.innerHTML !== "" && square6.innerHTML !== "" && square7.innerHTML !== "" && square8.innerHTML !== "" && square9.innerHTML !== ""){
-                alert("No One Has Won - Try Again"); 
+                 
                 wonGame = true;
+                winningSymbol == null;
+                winText();
                 // endGame = true;
             };
         };
@@ -178,8 +180,10 @@ function winText(){
 
     if (winningSymbol == playerSymbol){
         winningText.innerText = "Congratulations, you won the game!"
+    }else if (winningSymbol == computerSymbol){
+        winningText.innerText = "Sorry, you have not won this time!"
     }else{
-        winningText.innerText = "Sorry, you have not won this time"
+        winningText.innerText = "No one won this time!"
     }
 
     const playAgain = document.getElementById("play-again");
