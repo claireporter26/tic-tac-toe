@@ -3,6 +3,7 @@ let computerSymbol;
 
 const square = [];
 
+const alert = document.querySelector('.alert-text');
 const gameArea = document.getElementById("gameArea")
 const gameSquare = document.querySelectorAll('.gameSquare')
 
@@ -73,35 +74,26 @@ gameSquare.forEach(function(square){
         
         if (item.innerHTML === ""){
             item.innerHTML = playerSymbol;
-        }else{
-            alert('Please Choose an Empty Square')
-        }
 
+            gameArea.style.pointerEvents = 'none';
 
-        
-        gameArea.style.pointerEvents = 'none';
+            playerHasWon();
 
-        playerHasWon();
-
-        if (wonGame == false){
-            setTimeout(randomComputerSquare, 750);  
-            setTimeout(function(){
+            if (wonGame == false){
+                setTimeout(randomComputerSquare, 650);  
+                setTimeout(function(){
                 gameArea.style.pointerEvents = 'auto';
-                }, 750);
+                }, 650);
+            }
+
+        }else{
+            alert.style.display = 'block';
+            setTimeout(function(){
+                alert.style.display = 'none';
+                }, 1700);
+            
+            
         }
-
-        // do {setTimeout(randomComputerSquare(),750);
-        //     setTimeout(function(){
-        //     gameArea.style.pointerEvents = 'auto';
-        //     }, 750);
-        // } while (wonGame == false);
-
-        
-
-
-        // gameArea.style.pointerEvents = 'auto';
-
-
         
     })
 

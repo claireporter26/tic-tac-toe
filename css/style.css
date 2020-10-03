@@ -32,12 +32,24 @@ body {
 
 .subtitle {
   font-size: 2rem;
-  margin-top: 1.5em;
+  margin: 1.5em 0 1.5em 0;
 }
 
 .subtitle--small {
   font-size: 1.7rem;
   margin-top: .5em;
+}
+
+.alert {
+  height: 2rem;
+  padding: 0;
+  margin-bottom: .4em;
+}
+
+.alert-text {
+  font-size: 1.3rem;
+  color: red;
+  display: none;
 }
 
 .play-instruction {
@@ -96,8 +108,7 @@ footer a {
 }
 
 #gameArea {
-  margin: auto;
-  margin-top: 50px;
+  margin: 0 auto;
   width: 316px;
   height: 316px;
   padding: 0px;
