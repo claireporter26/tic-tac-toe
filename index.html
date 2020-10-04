@@ -14,39 +14,32 @@
 
     <div class="container-main">
 
-       
         <div class="modal fade" id="endGameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Game Finished</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Game Finished</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <p class="winning-text"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success btn-modal"  id="play-again">Play Again</button>
+                        <button type="button" class="btn btn-secondary btn-modal" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                <p class="winning-text"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-modal"  id="play-again">Play Again</button>
-                    <button type="button" class="btn btn-secondary btn-modal" data-dismiss="modal">Close</button>
-                
-                   
-                 </div>
-            </div>
             </div>
         </div>
 
         <h1 class="header">Tic Tac Toe</h1>
 
-        <!-- <div class="large-flex">
-            <div class="large-flex_1"> -->
-                
-
         <div class="choose-side">
             <div class="subtitle" id=chooseSide>
                 <div class="subtitle-text">
-                <h2>Get Ready to Play!</h2>
+                <h2 class="subtitle--large">Get Ready to Play!</h2>
                 <h2 class="subtitle--small">Choose your Side</h2> 
                 </div>
                 <div class="button-container">
@@ -58,11 +51,8 @@
 
         <div>
             <p class="play-instruction">Click on an empty grid square to place your token</p>
-
         </div>
-    <!-- </div> -->
 
-    <!-- <div class="large-flex_2"> -->
         <div class="alert">
             <p class="alert-text">Please choose an empty square.</p>
         </div>
@@ -84,27 +74,14 @@
                     <td class="gameSquare" id="gameSquare8"></td>
                     <td class="gameSquare" id="gameSquare9"></td>
                 </tr>
-
-
-
             </table>
-
-
-
         </div>
-            <!-- </div>
-        </div> -->
-
-        <!-- <button data-toggle="modal" data-target="#endGameModal">Test Modal</button> -->
-
+      
     </div>
 
-        <footer>
-            <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> and <a href="https://www.flaticon.com/authors/hirschwolf" title="hirschwolf">hirschwolf</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        </footer>
-
-    
-
+    <footer>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> and <a href="https://www.flaticon.com/authors/hirschwolf" title="hirschwolf">hirschwolf</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    </footer>
 
     <script src="app.js"></script> 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

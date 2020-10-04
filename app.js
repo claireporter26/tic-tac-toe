@@ -1,11 +1,9 @@
 let playerSymbol;
 let computerSymbol;
 
-const square = [];
-
 const alert = document.querySelector('.alert-text');
-const gameArea = document.getElementById("gameArea")
-const gameSquare = document.querySelectorAll('.gameSquare')
+const gameArea = document.getElementById("gameArea");
+const gameSquare = document.querySelectorAll('.gameSquare');
 
 const square1 = document.getElementById("gameSquare1");
 const square2 = document.getElementById("gameSquare2");
@@ -17,7 +15,7 @@ const square7 = document.getElementById("gameSquare7");
 const square8 = document.getElementById("gameSquare8");
 const square9 = document.getElementById("gameSquare9");
 
-const chooseSideBtns = document.querySelectorAll(".btn-chooseside")
+const chooseSideBtns = document.querySelectorAll('.btn-chooseside')
 const chooseSideX = document.getElementById("chooseSideX");
 const chooseSideO = document.getElementById("chooseSideO");
 
@@ -34,7 +32,8 @@ let wonGame = false;
 
 let winningText = document.querySelector('.winning-text')
 
-//player choose side
+
+//player chooses side
 
 chooseSideBtns.forEach(function(button){
     button.addEventListener('click', function(e){
@@ -42,29 +41,23 @@ chooseSideBtns.forEach(function(button){
         const item = e.target;
 
         if (item.classList.contains('chooseSideX')){
-            
             playerSymbol = playerSymbolX;
             computerSymbol = playerSymbolO ;
             
 
         } else if (item.classList.contains('chooseSideO')){
-            
             playerSymbol = playerSymbolO;
             computerSymbol = playerSymbolX;
         } else {
-            alert('Error')
+            alert("Error. Please choose a player symbol");
         }
-
-        console.log('player symbol is ' + playerSymbol);
-        console.log('computer symbol is ' + computerSymbol);
-
 
         chooseSide.style.display = 'none';
         playInstruction.style.display = 'block';
-
         gameArea.style.pointerEvents = 'auto';
     })
 });
+
 
 //add symbols to grid
 
@@ -86,22 +79,17 @@ gameSquare.forEach(function(square){
                 }, 650);
             }
 
-        }else{
+        } else {
             alert.style.display = 'block';
             setTimeout(function(){
                 alert.style.display = 'none';
                 }, 1700);
-            
-            
         }
-        
     })
-
 })
 
+
 //function to randomly select computer square
-
-
 
 function randomComputerSquare(){
 
@@ -124,15 +112,19 @@ function randomComputerSquare(){
 
 function playerHasWon(){
 
-    
-        if (square1.innerHTML === playerSymbolX && square2.innerHTML === playerSymbolX && square3.innerHTML === playerSymbolX || square4.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square6.innerHTML === playerSymbolX || square7.innerHTML === playerSymbolX && square8.innerHTML === playerSymbolX && square9.innerHTML === playerSymbolX || square1.innerHTML === playerSymbolX && square4.innerHTML === playerSymbolX && square7.innerHTML === playerSymbolX || square2.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square8.innerHTML === playerSymbolX || square3.innerHTML === playerSymbolX && square6.innerHTML === playerSymbolX && square9.innerHTML === playerSymbolX || square1.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square9.innerHTML === playerSymbolX || square3.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square7.innerHTML === playerSymbolX){
+        if (square1.innerHTML === playerSymbolX && square2.innerHTML === playerSymbolX && square3.innerHTML === playerSymbolX || 
+            square4.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square6.innerHTML === playerSymbolX || 
+            square7.innerHTML === playerSymbolX && square8.innerHTML === playerSymbolX && square9.innerHTML === playerSymbolX || 
+            square1.innerHTML === playerSymbolX && square4.innerHTML === playerSymbolX && square7.innerHTML === playerSymbolX || 
+            square2.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square8.innerHTML === playerSymbolX || 
+            square3.innerHTML === playerSymbolX && square6.innerHTML === playerSymbolX && square9.innerHTML === playerSymbolX || 
+            square1.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square9.innerHTML === playerSymbolX || 
+            square3.innerHTML === playerSymbolX && square5.innerHTML === playerSymbolX && square7.innerHTML === playerSymbolX){
           
             winningSymbol = `<img class="gameSquare_icon" src="./images/close.png" alt="Cross">`;
             wonGame = true;
+
             endGame();
-            // endGame = true;
-            gameArea.style.pointerEvents = 'none';
-            console.log("player X won");
             winText();
         } else if (
             square1.innerHTML === playerSymbolO && square2.innerHTML === playerSymbolO && square3.innerHTML === playerSymbolO || 
@@ -145,10 +137,9 @@ function playerHasWon(){
             square3.innerHTML === playerSymbolO && square5.innerHTML === playerSymbolO && square7.innerHTML === playerSymbolO){
         
             winningSymbol = `<img class="gameSquare_icon" src="./images/rec.png" alt="Nought">`;
-            console.log("player O won")
             wonGame = true;
+
             endGame();
-            // endGame = true;
             winText();
         } else {
             
@@ -156,25 +147,22 @@ function playerHasWon(){
                  
                 wonGame = true;
                 winningSymbol == null;
+
+                endGame();
                 winText();
-                // endGame = true;
             };
         };
-    
-    
-}
+
+};
 
 function endGame(){
-    
     gameArea.style.pointerEvents = 'none';
-    
-    console.log('end game working')
 }
 
+// show winning text
 
 function winText(){
     
-
     setTimeout(function(){
         playInstruction.style.display = "none";
         $('#endGameModal').modal('show');
@@ -193,18 +181,8 @@ function winText(){
 
     playAgain.addEventListener('click', function(){
         location.reload();
-        
     })
 
-
-    // document.getElementById("play-again"). = function(){
-    // document.location.reload;
-    // };
-    
-    // document.getElementById("winningText").innerHTML = 'Player ' + winningSymbol + ' has Won!!';
-    // document.getElementById("winningTextBtn").style.display = "block";
-
-   
 };
 
 

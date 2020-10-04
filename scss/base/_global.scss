@@ -9,38 +9,38 @@ img {
     height: 100%
 }
 
-html, body {
-    // height: 100%;
+html {
+    height: 100%;
 }
+
 body {
-    // height: 100%;
+    min-height: 100%;
     background-color: lightgrey;
-    // font-family: 'Baloo Tammudu 2', cursive;
     font-family: 'David Libre', serif;
     color: rgb(36, 15, 75);
-    
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
-    // position: relative;
-
-    
-   
 }
 
 .container-main {
     width: 80%;
-    margin: 1em auto;
+    margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
-    
-
+footer {
+    margin-top: auto;
+    font-size: .6rem;
+    padding: 1em;
+     
+    a{
+        color: black;
+    }
 }
 
 
