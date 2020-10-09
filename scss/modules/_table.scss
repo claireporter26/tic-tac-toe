@@ -12,8 +12,8 @@
 
     &_icon {
         pointer-events: none;
-        height: 100%;
-        width: 100%;
+        height: 80px;
+        width: 80px;
     }
 }
 
@@ -21,6 +21,7 @@ table {
     width: 100%;
     height: 100%;
     border-collapse: collapse;
+    border-spacing: none;
 }
 
 tr{
