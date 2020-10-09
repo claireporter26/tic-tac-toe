@@ -168,6 +168,8 @@ footer a {
 
 .gameSquare_icon {
   pointer-events: none;
+  height: 100%;
+  width: 100%;
 }
 
 table {
@@ -186,7 +188,6 @@ td {
   width: 100px;
   height: 100px;
   border: 2px solid #240f4b;
-  padding: .3em;
   margin: 0px;
   text-align: center;
   vertical-align: center;
