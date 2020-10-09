@@ -177,7 +177,7 @@ table {
 }
 
 tr {
-  max-height: 100px;
+  height: 100px;
   padding: 0px;
   margin: 0px;
 }
@@ -189,6 +189,6 @@ td {
   padding: .3em;
   margin: 0px;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: center;
 }
 /*# sourceMappingURL=style.css.map */
